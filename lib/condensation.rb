@@ -9,7 +9,7 @@ module Condensation
     Filters::ReplaceInnerHTML
   ]
 
-  def register_filters
+  def self.register_filters
     FILTERS.each do |filter|
       Liquid::Template.register_filter(filter)
     end
