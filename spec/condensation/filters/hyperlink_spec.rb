@@ -36,5 +36,11 @@ describe Condensation::Filters::Hyperlink do
       result = render_with_filter(template, { "url" => url })
       result.must_equal "<a href='#{url}'>#{escaped}</a>"
     end
+
+    it "should return empty string if input is nil" do
+      template = Liquid::Template.parse("{{ url | hyperlink }}")
+      result = render_with_filter(template, {})
+      result.must_equal ""
+    end
   end
 end
