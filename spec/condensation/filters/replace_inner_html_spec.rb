@@ -27,5 +27,17 @@ describe Condensation::Filters::ReplaceInnerHTML do
         result.must_equal tag
       end
     end
+
+    it "should return empty string if input is nil" do
+      template = Liquid::Template.parse("{{ example_link | replace_inner_html: 'Bar' }}")
+      result = render_with_filter(template, {})
+      result.must_equal ""
+    end
+
+    it "should handle numeric input" do
+      template = Liquid::Template.parse("{{ example_link | replace_inner_html: 'Bar' }}")
+      result = render_with_filter(template, { "example_link" => 1 })
+      result.must_equal "1"
+    end
   end
 end

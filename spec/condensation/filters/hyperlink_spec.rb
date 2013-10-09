@@ -42,5 +42,11 @@ describe Condensation::Filters::Hyperlink do
       result = render_with_filter(template, {})
       result.must_equal ""
     end
+
+    it "should handle numeric input" do
+      template = Liquid::Template.parse("{{ url | hyperlink: 'Bar' }}")
+      result = render_with_filter(template, { "url" => 1 })
+      result.must_equal "<a href='1'>Bar</a>"
+    end
   end
 end
