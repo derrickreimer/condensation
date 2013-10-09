@@ -1,5 +1,16 @@
+require "liquid"
+require "condensation/filters"
 require "condensation/version"
 
 module Condensation
-  # Your code goes here...
+  FILTERS = [
+    Filters::Default,
+    Filters::ReplaceInnerHTML
+  ]
+
+  def register_filters
+    FILTERS.each do |filter|
+      Liquid::Template.register_filter(filter)
+    end
+  end
 end
