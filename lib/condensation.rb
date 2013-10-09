@@ -6,6 +6,7 @@ require "condensation/version"
 module Condensation
   FILTERS = [
     Filters::Default,
+    Filters::Hyperlink,
     Filters::ReplaceInnerHTML
   ]
 
