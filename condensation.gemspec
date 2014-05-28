@@ -3,19 +3,20 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'condensation/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "condensation"
-  gem.version       = Condensation::VERSION
-  gem.authors       = ["Derrick Reimer"]
-  gem.email         = ["derrickreimer@gmail.com"]
-  gem.description   = %q{A collection of handy extensions to the Liquid templating language}
-  gem.summary       = %q{Condensation is a collection of handy extensions to the Liquid templating language}
-  gem.homepage      = "https://github.com/djreimer/condensation"
+Gem::Specification.new do |spec|
+  spec.name          = "condensation"
+  spec.version       = Condensation::VERSION
+  spec.authors       = ["Derrick Reimer"]
+  spec.email         = ["derrickreimer@gmail.com"]
+  spec.description   = %q{A collection of handy extensions to the Liquid templating language}
+  spec.summary       = %q{Condensation is a collection of handy extensions to the Liquid templating language}
+  spec.homepage      = "https://github.com/djreimer/condensation"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  gem.add_dependency "liquid", [">= 2.0", "<= 4.0"]
+  spec.add_dependency "liquid", [">= 2.0", "<= 4.0"]
+  spec.add_dependency "quack", ">= 0.0.2"
 end
