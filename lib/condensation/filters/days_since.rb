@@ -9,7 +9,7 @@ module Condensation
         return unless value.is_a?(Time)
 
         diff = Time.now - value
-        diff.to_i / 86400
+        [diff.to_i / 86400, 0].max
       end
     end
   end

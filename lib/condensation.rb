@@ -8,7 +8,8 @@ module Condensation
     Filters::Default,
     Filters::Hyperlink,
     Filters::ReplaceInnerHTML,
-    Filters::DaysSince
+    Filters::DaysSince,
+    Filters::DaysUntil
   ]
 
   def self.register_filters
