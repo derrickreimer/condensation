@@ -1,6 +1,6 @@
 # Condensation
 
-TODO: Write a gem description
+A collection of handy Liquid filters. Developed for [Drip](https://www.getdrip.com).
 
 ## Installation
 
@@ -18,7 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To make all the filters available in your Liquid templates, place this call
+in your app initialization code:
+
+```ruby
+Condensation.register_filters
+```
+
+For example, in a Rails app, you'll likely place this in an initializer.
+To pick and choose which filters you like, just register them manually:
+
+```ruby
+Liquid::Template.register_filter(Condensation::Filters::DaysUntil)
+```
+
+Explore all the available filters [here](https://github.com/djreimer/condensation/tree/master/lib/condensation/filters).
 
 ## Contributing
 
