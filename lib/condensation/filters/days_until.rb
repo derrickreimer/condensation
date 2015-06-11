@@ -1,4 +1,4 @@
-require 'quack'
+require 'time'
 
 module Condensation
   module Filters
@@ -11,7 +11,7 @@ module Condensation
         else
           value = Time.parse(input) rescue nil
         end
-        
+
         return unless value.is_a?(Time)
 
         diff = value - Time.now

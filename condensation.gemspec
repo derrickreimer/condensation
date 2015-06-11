@@ -22,5 +22,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "timecop", "~> 0.7"
 
   spec.add_dependency "liquid", [">= 2.0", "<= 4.0"]
-  spec.add_dependency "quack", ">= 0.0.3"
 end
