@@ -11,7 +11,8 @@ module Condensation
     Filters::DaysSince,
     Filters::DaysUntil,
     Filters::UrlEncode,
-    Filters::StripCommas
+    Filters::StripCommas,
+    Filters::AdvanceDateToNext
   ]
 
   def self.register_filters

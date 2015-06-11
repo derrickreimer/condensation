@@ -1,11 +1,17 @@
-require 'quack'
+require 'time'
 
 module Condensation
   module Filters
     module DaysSince
       def days_since(input)
         return if input.nil?
-        value = Quack(input).to_coerced
+
+        if input.is_a?(Time)
+          value = input
+        else
+          value = Time.parse(input) rescue nil
+        end
+
         return unless value.is_a?(Time)
 
         diff = Time.now - value

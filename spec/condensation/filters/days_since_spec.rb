@@ -32,13 +32,6 @@ describe Condensation::Filters::DaysSince do
       result.must_equal "13"
     end
 
-    it "should handle YMD formatted dates" do
-      created_at = "2014-05-15"
-      template = Liquid::Template.parse("{{ created_at | days_since }}")
-      result = render_with_filter(template, { "created_at" => created_at })
-      result.must_equal "15"
-    end
-
     it "should handle Time input" do
       created_at = Time.utc(2014, 5, 20, 0, 0, 0)
       template = Liquid::Template.parse("{{ created_at | days_since }}")
