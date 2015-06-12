@@ -22,4 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "timecop", "~> 0.7"
 
   spec.add_dependency "liquid", [">= 2.0", "<= 4.0"]
+  spec.add_dependency "tzinfo"
+  spec.add_dependency "activesupport", "~> 3.0"
 end

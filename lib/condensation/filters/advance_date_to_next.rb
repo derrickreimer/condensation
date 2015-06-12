@@ -1,4 +1,5 @@
-require 'time'
+require "active_support/time_with_zone"
+require "active_support/core_ext/time/calculations"
 
 module Condensation
   module Filters
@@ -26,7 +27,7 @@ module Condensation
           break if value.wday == day_number
         end
 
-        value
+        value.iso8601
       end
     end
   end
