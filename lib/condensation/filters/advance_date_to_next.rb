@@ -27,7 +27,7 @@ module Condensation
           break if value.wday == day_number
         end
 
-        value.iso8601
+        value
       end
     end
   end

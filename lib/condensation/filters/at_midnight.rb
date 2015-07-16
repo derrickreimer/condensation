@@ -14,7 +14,7 @@ module Condensation
         end
 
         return input unless value.is_a?(Time)
-        value.at_midnight.iso8601
+        value.at_midnight
       end
 
       alias_method :beginning_of_day, :at_midnight

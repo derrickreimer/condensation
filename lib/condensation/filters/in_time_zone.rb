@@ -14,7 +14,7 @@ module Condensation
           zone.parse(input)
         end
 
-        converted_time.iso8601
+        converted_time
       end
     end
   end

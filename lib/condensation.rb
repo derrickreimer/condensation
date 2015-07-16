@@ -1,4 +1,5 @@
 require "liquid"
+require "condensation/extensions"
 require "condensation/sanitizer"
 require "condensation/filters"
 require "condensation/version"
