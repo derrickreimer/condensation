@@ -9,8 +9,10 @@ module Condensation
         return input if zone.nil?
 
         converted_time = if input.is_a?(Time)
+          puts "is a time"
           input.in_time_zone(zone)
         else
+          puts "is not a time"
           zone.parse(input)
         end
 
