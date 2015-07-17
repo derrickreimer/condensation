@@ -8,10 +8,8 @@ module Condensation
         return if input.nil?
 
         if input.is_a?(Time)
-          puts "is a time"
           value = input
         else
-          puts "is not a time"
           value = Time.parse(input) rescue nil
         end
 
