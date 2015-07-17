@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "condensation"
   spec.version       = Condensation::VERSION
   spec.authors       = ["Derrick Reimer"]
+  spec.licenses      = ["MIT"]
   spec.email         = ["derrickreimer@gmail.com"]
   spec.description   = %q{A collection of handy extensions to the Liquid templating language}
   spec.summary       = %q{Condensation is a collection of handy extensions to the Liquid templating language}
@@ -18,10 +19,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 0"
   spec.add_development_dependency "timecop", "~> 0.7"
 
   spec.add_dependency "liquid", [">= 2.0", "<= 4.0"]
-  spec.add_dependency "tzinfo"
+  spec.add_dependency "tzinfo", "~> 0"
   spec.add_dependency "activesupport", "~> 3.0"
 end
