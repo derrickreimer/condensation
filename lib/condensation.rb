@@ -15,7 +15,8 @@ module Condensation
     Filters::StripCommas,
     Filters::AdvanceDateToNext,
     Filters::AtMidnight,
-    Filters::InTimeZone
+    Filters::InTimeZone,
+    Filters::Timestamp
   ]
 
   def self.register_filters
