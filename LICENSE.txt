@@ -1,4 +1,4 @@
-Copyright (c) 2013-2015 Derrick Reimer
+Copyright (c) 2013-2016 Derrick Reimer
 
 MIT License
 
