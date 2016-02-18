@@ -16,7 +16,9 @@ module Condensation
     Filters::AdvanceDateToNext,
     Filters::AtMidnight,
     Filters::InTimeZone,
-    Filters::Timestamp
+    Filters::Timestamp,
+    Filters::WeeksSince,
+    Filters::WeeksUntil
   ]
 
   def self.register_filters
