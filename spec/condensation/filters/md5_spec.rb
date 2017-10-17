@@ -8,8 +8,16 @@ describe Condensation::Filters::MD5 do
   it "should return a MD5 hash of the input" do
     text = Digest::MD5.hexdigest "The foo to the bar"
     template = Liquid::Template.parse("{{ text | md5 }}")
-    
+
     result = render_with_filter(template, { "text" => "The foo to the bar"})
     result.must_equal "9dd755a53b119d3e8d7106aafe7d9d44"
+  end
+
+  it "should handle nil values" do
+    text = nil
+    template = Liquid::Template.parse("{{ text | md5 }}")
+
+    result = render_with_filter(template, { "text" => text})
+    result.must_equal ""
   end
 end

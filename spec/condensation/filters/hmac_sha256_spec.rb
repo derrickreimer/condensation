@@ -12,4 +12,12 @@ describe Condensation::Filters::HmacSha256 do
     result = render_with_filter(template, { "text" => "The foo to the bar" })
     result.must_equal "ea8ffbac691e798b71e9604fd8cbd58a55618f5b29bb1dbd781aac769edb2901"
   end
+
+  it "should handle nil values" do
+    text = nil
+    template = Liquid::Template.parse("{{ text | hmac_sha256: '' }}")
+
+    result = render_with_filter(template, { "text" => text })
+    result.must_equal ""
+  end
 end
