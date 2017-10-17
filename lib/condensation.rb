@@ -18,7 +18,8 @@ module Condensation
     Filters::InTimeZone,
     Filters::Timestamp,
     Filters::WeeksSince,
-    Filters::WeeksUntil
+    Filters::WeeksUntil,
+    Filters::MD5
   ]
 
   def self.register_filters
