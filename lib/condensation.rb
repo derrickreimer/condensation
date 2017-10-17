@@ -19,7 +19,8 @@ module Condensation
     Filters::Timestamp,
     Filters::WeeksSince,
     Filters::WeeksUntil,
-    Filters::MD5
+    Filters::MD5,
+    Filters::HmacSha256
   ]
 
   def self.register_filters
