@@ -12,7 +12,7 @@ module Condensation
                            input.in_time_zone(zone)
                          else
                            zone.parse(input)
-        end
+                         end
 
         converted_time
       end
