@@ -1,3 +1,5 @@
+require "digest"
+
 module Condensation
   module Filters
     module MD5

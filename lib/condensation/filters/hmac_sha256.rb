@@ -1,3 +1,5 @@
+require "openssl"
+
 module Condensation
   module Filters
     module HmacSha256
