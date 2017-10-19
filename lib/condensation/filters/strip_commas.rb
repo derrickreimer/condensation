@@ -3,7 +3,7 @@ module Condensation
     module StripCommas
       def strip_commas(input)
         return if input.nil?
-        input.gsub(",", "")
+        input.delete(',')
       end
     end
   end

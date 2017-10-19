@@ -7,7 +7,9 @@ module Condensation
     end
 
     def escape_html
-      CGI.escapeHTML(input) rescue input
+      CGI.escapeHTML(input)
+    rescue
+      input
     end
   end
 end

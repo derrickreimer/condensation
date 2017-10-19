@@ -1,5 +1,5 @@
-require "active_support/time_with_zone"
-require "active_support/core_ext/time/calculations"
+require 'active_support/time_with_zone'
+require 'active_support/core_ext/time/calculations'
 
 module Condensation
   module Filters
@@ -7,15 +7,19 @@ module Condensation
       def advance_date_to_next(input, day)
         return if input.nil?
 
-        if input.is_a?(Time)
-          value = input
-        else
-          value = Time.parse(input) rescue nil
-        end
+        value = if input.is_a?(Time)
+                  input
+                else
+                  begin
+                    Time.parse(input)
+                  rescue
+                    nil
+                  end
+                end
 
         return input unless value.is_a?(Time)
 
-        days = %w{sunday monday tuesday wednesday thursday friday saturday}
+        days = %w[sunday monday tuesday wednesday thursday friday saturday]
         day_number = days.index(day.downcase)
 
         unless day_number
@@ -23,7 +27,7 @@ module Condensation
         end
 
         loop do
-          value = value + 86400  # advance a day
+          value += 86_400 # advance a day
           break if value.wday == day_number
         end
 

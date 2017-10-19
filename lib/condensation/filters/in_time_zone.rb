@@ -1,5 +1,5 @@
-require "active_support/time_with_zone"
-require "active_support/core_ext/time/calculations"
+require 'active_support/time_with_zone'
+require 'active_support/core_ext/time/calculations'
 
 module Condensation
   module Filters
@@ -9,9 +9,9 @@ module Condensation
         return input if zone.nil?
 
         converted_time = if input.is_a?(Time)
-          input.in_time_zone(zone)
-        else
-          zone.parse(input)
+                           input.in_time_zone(zone)
+                         else
+                           zone.parse(input)
         end
 
         converted_time

@@ -1,8 +1,8 @@
-require "liquid"
-require "condensation/extensions"
-require "condensation/sanitizer"
-require "condensation/filters"
-require "condensation/version"
+require 'liquid'
+require 'condensation/extensions'
+require 'condensation/sanitizer'
+require 'condensation/filters'
+require 'condensation/version'
 
 module Condensation
   FILTERS = [
@@ -21,7 +21,7 @@ module Condensation
     Filters::WeeksUntil,
     Filters::MD5,
     Filters::HmacSha256
-  ]
+  ].freeze
 
   def self.register_filters
     FILTERS.each do |filter|
