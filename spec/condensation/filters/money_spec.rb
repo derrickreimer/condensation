@@ -9,21 +9,18 @@ describe Condensation::Filters::Money do
     it 'should accept a string' do
       template = Liquid::Template.parse("{{ '153' | cents }}")
       result = render_with_filter(template)
-      puts result.inspect
       result.must_equal '1.53'
     end
 
     it 'should accept an integer' do
       template = Liquid::Template.parse('{{ 153 | cents }}')
       result = render_with_filter(template)
-      puts result.inspect
       result.must_equal '1.53'
     end
 
     it 'should accept a varible' do
       template = Liquid::Template.parse('{{ price_in_cents | cents }}')
       result = render_with_filter(template, 'price_in_cents' => 153)
-      puts result.inspect
       result.must_equal '1.53'
     end
   end
@@ -32,21 +29,26 @@ describe Condensation::Filters::Money do
     it 'should accept a string' do
       template = Liquid::Template.parse("{{ '153' | dollars }}")
       result = render_with_filter(template)
-      puts result.inspect
+      result.must_equal '153.00'
+    end
+
+    it 'should accept a formatted currency string' do
+      template = Liquid::Template.parse("{{ '$153.00' | dollars }}")
+      result = render_with_filter(template)
       result.must_equal '153.00'
     end
 
     it 'should accept an integer' do
       template = Liquid::Template.parse('{{ 153 | dollars }}')
       result = render_with_filter(template)
-      puts result.inspect
+      puts result
       result.must_equal '153.00'
     end
 
     it 'should accept a varible' do
       template = Liquid::Template.parse('{{ price_in_dollars | dollars }}')
       result = render_with_filter(template, 'price_in_dollars' => 153)
-      puts result.inspect
+      puts result
       result.must_equal '153.00'
     end
   end
