@@ -19,6 +19,7 @@ module Condensation
     Filters::Timestamp,
     Filters::WeeksSince,
     Filters::WeeksUntil,
+    Filters::Money,
     Filters::MD5,
     Filters::HmacSha256
   ].freeze
